@@ -1,0 +1,28 @@
+/* Variables */
+$gray: #4c4c4c;
+
+/* Styles */
+body {
+	color: $gray;
+	font-weight: 300;
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1.4em;
+	margin: 0 auto;
+	max-width: 960px;
+	min-width: 230px;
+
+	-moz-font-smoothing: antialiased;
+ -webkit-font-smoothing: antialiased;
+		 font-smoothing: antialiased;
+
+	.loading {
+		opacity: 0;
+	}
+	.loaded {
+		opacity: 1;
+
+		        transition: opacity .25s ease-in-out;
+		   -moz-transition: opacity .25s ease-in-out;
+		-webkit-transition: opacity .25s ease-in-out;
+	}
+}
