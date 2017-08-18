@@ -3,15 +3,11 @@ import { shallow } from 'enzyme';
 import SingleMessage from './SingleMessage';
 
 const messageObj = {
-	attributes: {
-		date: '2015-10-11T08:40:51.620Z',
-		useragent: 'Mozilla/5.0',
-		message: 'hi!',
-		username: 'bob.jones',
-		pic: 'http://semantic-ui.com/images/avatar/small/elliot.jpg'
-	},
-	type: 'messages',
-	id: '1'
+	date: '2015-10-11T08:40:51.620Z',
+	useragent: 'Mozilla/5.0',
+	message: 'hi!',
+	username: 'bob.jones',
+	pic: 'http://semantic-ui.com/images/avatar/small/elliot.jpg'
 };
 
 describe('<SingleMessage />', () => {
