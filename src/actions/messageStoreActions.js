@@ -15,7 +15,7 @@ export function getMessages() {
 			.then(function(data) {
 				dispatch({
 					type: types.GET_MESSAGES,
-					messages: data.data
+					messages: data[0].data
 				});
 			})
 			.then(function() {

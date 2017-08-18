@@ -16,7 +16,7 @@ class Messages extends React.Component {
 	buildMessages() {
 		const { messageStore } = this.props;
 		const messageContainer = [];
-		messageStore.messages.map((message, idx) => {
+		messageStore.messages && messageStore.messages.map((message, idx) => {
 			messageContainer.push(
 				<SingleMessage key={ message.id || idx } messageObj={ message } />
 			);

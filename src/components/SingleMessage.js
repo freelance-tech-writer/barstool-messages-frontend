@@ -8,7 +8,7 @@ export default class SingleMessage extends Component {
 
 	render() {
 		const { messageObj } = this.props;
-		const attributes = messageObj.attributes;
+		const attributes = messageObj;
 
 		return (
 			<div className="messageContainer">

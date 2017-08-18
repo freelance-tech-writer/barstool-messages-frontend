@@ -20,6 +20,8 @@ Run:
 yarn start
 ```
 
+The app will run by default on http://localhost:8081/messages
+
 ## API
 The app depends on a local API server running (by default) on http://localhost:5000/messages!
 
