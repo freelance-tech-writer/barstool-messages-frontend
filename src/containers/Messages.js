@@ -5,19 +5,31 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions/messageStoreActions';
+import SingleMessage from '../components/SingleMessage';
 
 class Messages extends React.Component {
 	componentWillMount() {
-		let { actions } = this.props;
+		const { actions } = this.props;
 		actions.getMessages();
 	}
 
+	buildMessages() {
+		const { messageStore } = this.props;
+		const messageContainer = [];
+		messageStore.messages.map((message, idx) => {
+			messageContainer.push(
+				<SingleMessage key={ message.id || idx } messageObj={ message } />
+			);
+		});
+		return messageContainer;
+	}
+
 	render() {
-		let { messageStore } = this.props;
-		console.log(this.props);
+		const { messageStore } = this.props;
 		return (
 			<div className={ messageStore.loaded ? 'loaded' : 'loading' }>
-				Message: { messageStore.messages }
+				<h2>Welcome to React</h2>
+				{ messageStore.loaded && this.buildMessages() }
 			</div>
 		);
 	}

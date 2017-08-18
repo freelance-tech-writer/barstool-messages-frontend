@@ -1,19 +1,19 @@
 /* Variables */
-$gray: #4c4c4c;
+$fontColor--dark: #000000;
+$fontColor--light: #9c9c9c;
 
-/* Styles */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* Global stuff */
 body {
-	color: $gray;
+	color: $fontColor--dark;
 	font-weight: 300;
-	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 15px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
 	margin: 0 auto;
 	max-width: 960px;
 	min-width: 230px;
-
-	-moz-font-smoothing: antialiased;
- -webkit-font-smoothing: antialiased;
-		 font-smoothing: antialiased;
 
 	.loading {
 		opacity: 0;
@@ -24,5 +24,40 @@ body {
 		        transition: opacity .25s ease-in-out;
 		   -moz-transition: opacity .25s ease-in-out;
 		-webkit-transition: opacity .25s ease-in-out;
+	}
+}
+
+/* SingleMessage.js */
+.messageContainer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+.messageContainer-avatar {
+	border-radius: 50%;
+	flex: 1 auto;
+	margin-top: 12px;
+	width: 35px;
+}
+.messageContainer-detailsContainer {
+	flex: 9 auto;
+}
+.detailsContainer-list {
+	line-height: 28px;
+	list-style: none;
+	margin: 18px 13px 0;
+	padding: 0;
+
+	.detailsContainer-message {
+		font-size: 18px;
+	}
+	.detailsContainer-username {
+		text-transform: capitalize;
+	}
+	.detailsContainer-date {
+		color: $fontColor--light;
+		font-size: 12px;
+		padding-left: 5px;
+		padding-top: 7px;
 	}
 }
