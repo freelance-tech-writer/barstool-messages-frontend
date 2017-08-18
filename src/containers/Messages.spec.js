@@ -1,17 +1,22 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {FuelSavingsPage} from './FuelSavingsPage';
-import FuelSavingsForm from '../components/FuelSavingsForm';
+import { shallow } from 'enzyme';
+import Messages from './Messages';
 
-describe('<FuelSavingsPage />', () => {
-  it('should contain <FuelSavingsForm />', () => {
-    const actions = {
-      saveFuelSavings: () => { },
-      calculateFuelSavings: () => { }
-    };
-    const fuelSavings = {};
-    const wrapper = shallow(<FuelSavingsPage actions={actions} fuelSavings={fuelSavings}/>);
+const Provider = require('react-redux').Provider;
+const createStore = require('redux').createStore;
+const reducers = require('../reducers/messageStoreReducer').default;
 
-    expect(wrapper.find(FuelSavingsForm).length).toEqual(1);
-  });
+let store = createStore(reducers);
+
+describe('<Messages />', () => {
+	it('Should render the Messages component', () => {
+
+		const wrapper = shallow(
+			<Provider store={store}>
+				<Messages store={store} />
+			</Provider>
+		);
+
+		expect(wrapper.find(Messages).length).toEqual(1);
+	});
 });

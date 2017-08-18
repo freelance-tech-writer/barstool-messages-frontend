@@ -13,7 +13,6 @@ export default function messageStoreReducer(state = initialState.messageStore, a
 
 	switch (action.type) {
 		case GET_MESSAGES:
-			console.log('reducer fired');
 			return objectAssign({}, state, {
 				messages: action.messages
 			});

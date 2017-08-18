@@ -1,18 +1,15 @@
 {
-  "name": "react-slingshot",
-  "version": "7.0.0",
-  "description": "Starter kit for creating apps with React and Redux",
+  "name": "barstool-messages-frontend",
+  "version": "1.0.0",
+  "description": "Messages front end, based on react-slingshot",
   "engines": {
     "npm": ">=3"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message",
-    "start-old": "npm-run-all --parallel test:watch open:src lint:watch",
-    "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node tools/distServer.js",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
@@ -22,14 +19,12 @@
     "build": "babel-node tools/build.js && npm run open:dist",
     "start": "babel-node tools/build.js && npm run open:dist",
     "test": "jest",
-    "test:CI": "babel-node tools/testCi.js",
     "test:cover": "npm run test -- --coverage ",
-    "test:cover:CI": "npm run test:CI -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "test:watch": "npm run test -- --watch",
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
-  "author": "Cory House",
+  "author": "Ian M",
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.4",
